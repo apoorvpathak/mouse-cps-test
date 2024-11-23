@@ -1,3 +1,4 @@
+<!-- todo: make this responsive for mobile devices -->
 <!doctype html>
 <html>
 <head>
@@ -6,7 +7,23 @@
   <link rel="stylesheet" href="src/main.css ">
   <title>CPS Test</title>
 </head>
-<body>
-  <h1 class="font-inter text-4xl text-blue-500 font-medium">Test</h1>
+<body class="mx-20 my-4">
+  <header class="flex justify-between">
+    <div>
+      <h2 class="font-inter text-blue-500 hover:underline text-3xl font-semibold">Mouse CPS Test</h2>
+    </div>
+    <div class="flex gap-8">
+      <a href="" class="font-inter text-2xl hover:text-gray-500 hover:cursor-alias font-medium">About</a>
+      <a href="" class="font-inter text-2xl hover:text-gray-500 font-medium">5 Seconds Test</a>
+      <a href="" class="font-inter text-2xl hover:text-gray-500 font-medium">10 Seconds Test</a>
+    </div>
+  </header>
+
+  <section class="flex items-center flex-col justify-center my-16">
+    <div class=" font-inter testing-area items-center my-8 flex justify-center w-1/2 h-80 rounded-lg bg-slate-300 ">
+      Click to start
+    </div>
+    <h3 class="font-inter font-medium text-3xl "> Time: 5:00</h3>
+  </section>
 </body>
 </html>
