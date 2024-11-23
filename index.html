@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/main.css ">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
   <title>CPS Test</title>
 </head>
 <body class="mx-20 my-4">
@@ -20,10 +21,11 @@
   </header>
 
   <section class="flex items-center flex-col justify-center my-16">
-    <div class=" font-inter testing-area items-center my-8 flex justify-center w-1/2 h-80 rounded-lg bg-slate-300 ">
+    <div id= "start-timer"class=" font-inter testing-area items-center my-8 flex justify-center w-1/2 h-80 rounded-lg bg-slate-300 ">
       Click to start
     </div>
-    <h3 class="font-inter font-medium text-3xl "> Time: 5:00</h3>
+    <h3 class="font-inter font-medium text-3xl "> Time: <span id="time">5.000</span> seconds</h3>
   </section>
+  <script src="index.js"></script>
 </body>
 </html>
