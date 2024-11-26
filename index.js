@@ -1,19 +1,24 @@
-$("#start-timer").click(function () {
-    let timeLeft = 5000; // Initial time in milliseconds
-    const timeDisplay = $("#time");
-    if (window.timerId) {
-        clearInterval(window.timerId);
+const timerStartBtn = document.querySelector("#start-timer");
+const timeDisplay = document.querySelector('#time')
+
+let timerInterval = null;
+let remainingTime = 5000; 
+let clickCount = 0; 
+
+timerStartBtn.addEventListener("click", function () {
+    clickCount++;
+
+    if(!timerInterval){
+        timerInterval = setInterval(() => {
+            remainingTime = remainingTime-10;
+            if(remainingTime <=0){
+                remainingTime = 0;
+                clearInterval(timerInterval);
+                timerInterval = null;
+                alert(`${clickCount} clicks in 5 seconds`);    
+            }
+            timeDisplay.textContent = (remainingTime/1000).toFixed(3);
+        }, 10);
     }
-
-    window.timerId = setInterval(function () {
-        if (timeLeft <= 0) {
-            clearInterval(window.timerId);
-            timeDisplay.text("0.000");
-            alert("Time's up!");
-            return;
-        }
-
-        timeLeft -= 10;
-        timeDisplay.text((timeLeft / 1000).toFixed(3));
-    }, 10);
-});
+    
+  });
